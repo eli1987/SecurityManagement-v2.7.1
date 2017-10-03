@@ -17,8 +17,10 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class LostAndFoundDocumentation extends AppCompatActivity {
 
@@ -34,6 +36,7 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
     private  Button selectMonthBt,isreturnBt;
     private int day,month2,year2;
     private DatePickerDialog datepick;
+    private Calendar cal ;
 
 
     @Override
@@ -52,14 +55,20 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
         context=this;
         selectMonthBt = (Button) findViewById(R.id.selectMonthBt);
 
-
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("UTC"));
+        day = cal.get(Calendar.DAY_OF_MONTH);
+        month2 = cal.get(Calendar.MONTH);
+        year2 = cal.get(Calendar.YEAR);
 
         selectMonthBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                datepick = new DatePickerDialog(context,new DatePickerDialog.OnDateSetListener() {
+
+                datepick = new DatePickerDialog(context,0,new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int day, int month, int year) {
+
                         month2 = datePicker.getMonth();
                         year2 = datePicker.getYear();
                         month2+=1;
@@ -123,7 +132,7 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
                         });
 
                     }
-                },day,month2,year2);
+                },year2,month2,day);
                 datepick.show();}
         });
 

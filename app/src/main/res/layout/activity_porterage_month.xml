@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.oryossipof.securitymanagement.PorterageMonthActivity"
+android:orientation="vertical"
+    android:background="@drawable/bg1"
+
+    android:layout_weight="100"
+
+
+    >
+
+
+    <TextView
+android:layout_gravity="center"
+        android:id="@+id/month_yearTxt"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+
+
+        android:text="05/2017"
+        android:inputType="text|textMultiLine"
+        android:enabled="false"
+
+ />
+
+
+<ListView
+
+    android:id="@+id/lv_grouplist"
+    android:layout_width="match_parent"
+    android:layout_height="391dp"
+    android:dividerHeight="1dp"
+    android:layoutDirection="rtl"
+
+    />
+
+
+
+<TextView
+    android:id="@+id/emptyElementForGroups"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:text="NO MESSAGES AVAILABLE!"
+    android:textColor="#525252"
+    android:textSize="19.0sp"
+    android:visibility="gone" />
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:layout_gravity="center"
+
+
+        >
+
+        <TextView
+            android:id="@+id/totalMoneyInMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text"
+            android:background="@drawable/editbackground"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Money: "
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+<LinearLayout
+
+    android:layout_marginTop="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:layout_gravity="center"
+    >
+
+    <Button
+        android:id="@+id/cancelBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        />
+
+
+    <Button
+    android:id="@+id/addGroupBT"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Add Group"
+    />
+
+
+
+
+
+
+</LinearLayout>
+</LinearLayout>

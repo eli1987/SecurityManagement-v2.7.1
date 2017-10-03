@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.oryossipof.securitymanagement.AddGroupActivity"
+android:orientation="vertical"
+android:layout_weight="100"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:background="@drawable/bg1"
+
+
+
+
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/addgrouplogo"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+<EditText
+
+    android:id="@+id/month_yearTxt"
+    android:layout_height="wrap_content"
+    android:textSize="40dp"
+    android:textAlignment="center"
+    android:textColor="#000"
+    android:layout_width="wrap_content"
+
+    android:gravity="top"
+    android:text="05/2017"
+    android:inputType="text|textMultiLine"
+    android:enabled="false"
+
+    android:layout_below="@+id/logo"
+    android:layout_centerHorizontal="true" />
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/numofpeoplelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/month_yearTxt">
+
+    <EditText
+        android:id="@+id/numpeolpetxt"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editbackground"
+        android:inputType="number"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#Poeple In The Group: "
+        />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/numofstufflay"
+        android:layout_below="@+id/numofpeoplelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/statuslay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/numofstufftxt"
+        android:layout_alignEnd="@+id/textView">
+
+        <Spinner
+            android:id="@+id/statusSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: "
+            />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/handsonlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statuslay"
+        android:layout_toEndOf="@+id/linearLayout">
+
+
+    </LinearLayout>
+
+
+
+
+
+<LinearLayout
+    android:layout_below="@+id/handsonlay"
+    android:layout_marginTop="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+    android:id="@+id/linearLayout"
+
+    >
+
+    <Button
+        android:id="@+id/cancelBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        />
+
+
+    <Button
+        android:id="@+id/addGroupBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Group"
+        />
+
+
+
+
+
+
+</LinearLayout>
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#Stuff: "
+        android:layout_below="@+id/numofpeoplelay"
+        android:layout_toEndOf="@+id/numofstufftxt" />
+
+    <EditText
+        android:inputType="number"
+        android:id="@+id/numofstufftxt"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/editbackground"
+        android:layout_below="@+id/numofpeoplelay"
+        android:layout_alignStart="@+id/numofpeoplelay" />
+
+    <EditText
+        android:id="@+id/handsontxt"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editbackground"
+        android:layout_below="@+id/statuslay"
+        android:layout_alignStart="@+id/numofstufftxt"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/handsontxt"
+        android:layout_alignBottom="@+id/handsontxt"
+        android:layout_toEndOf="@+id/handsontxt"
+        android:text="#Hand On Group: " />
+
+
+    <LinearLayout
+        android:layout_below="@+id/linearLayout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+
+        >
+        <Button
+            android:id="@+id/porterageThisMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Porterage This Month"
+            />
+        </LinearLayout>
+</RelativeLayout>

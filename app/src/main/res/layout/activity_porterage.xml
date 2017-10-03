@@ -5,17 +5,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.oryossipof.securitymanagement.PorterageActivity"
-android:layout_gravity="left"
-    android:gravity="left"
+android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg1"
+
+
     >
 
 
+<ImageView
+    android:id="@+id/logoporterage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/porteragelogo"
+    android:layout_centerHorizontal="true"
+    />
 
 
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:weightSum="100"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/monthLayout"
+    android:layout_below="@+id/logoporterage"
+
+    >
 
 
+        <Spinner
+            android:layout_weight="30"
+            android:id="@+id/monthCombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+
+
+    >
+
+
+        </Spinner>
 
         <TextView
+            android:layout_weight="20"
             android:id="@+id/monthTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,49 +57,127 @@ android:layout_gravity="left"
 
         </TextView>
 
-        <Spinner
-            android:id="@+id/monthCombo"
+
+
+</LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/yearlayout"
+            android:weightSum="100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/monthLayout"
+
+            >
+
+                <Spinner
+                    android:id="@+id/yearCombo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:textDirection="ltr">
+
+
+                </Spinner>
+
+
+                <TextView
+                    android:layout_weight="20"
+                    android:id="@+id/yearTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year: "
+
+
+                    >
+
+
+                </TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/totalPorterageLayout"
+            android:weightSum="100"
+            android:layout_marginTop="78dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/monthTxt"
-            android:layout_marginStart="28dp">
+            android:orientation="horizontal"
+            android:layout_below="@+id/yearlayout"
+            android:layout_centerHorizontal="true">
 
 
-        </Spinner>
+                <TextView
+                    android:id="@+id/totalPorterageTxt"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editbackground"
+                    android:gravity="top"
+                    android:inputType="text|textMultiLine"
+                    android:enabled="false"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+
+                    />
 
 
+                <TextView
 
 
-        <TextView
-            android:id="@+id/yearTxt"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="20dp"
+                    android:text="Total Porterage: $"
+                    android:textStyle="bold"
+                    />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Year: "
-            android:layout_below="@+id/monthTxt"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/totalPorterageLayout"
 
             >
 
 
-        </TextView>
+                <Button
+                    android:id="@+id/exitBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exit"
+
+                    />
+
+
+                <Button
+                    android:id="@+id/okBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OK"
+
+                    />
+
+                <Button
+                    android:id="@+id/gotsomeBT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Got Some"
+
+                    />
 
 
 
-        <Spinner
-            android:id="@+id/yearCombo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textDirection="ltr"
 
-
-            android:layout_below="@+id/monthTxt"
-            android:layout_alignStart="@+id/monthCombo">
-
-
-        </Spinner>
-
-
-
+        </LinearLayout>
 
 
 </RelativeLayout>

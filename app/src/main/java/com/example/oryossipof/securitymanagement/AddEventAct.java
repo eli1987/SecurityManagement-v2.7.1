@@ -32,7 +32,9 @@ package com.example.oryossipof.securitymanagement;
         import com.firebase.client.Firebase;
         import com.google.android.gms.tasks.OnFailureListener;
         import com.google.android.gms.tasks.OnSuccessListener;
-        import com.google.firebase.storage.FirebaseStorage;
+      import com.google.firebase.messaging.FirebaseMessagingService;
+      import com.google.firebase.messaging.RemoteMessage;
+      import com.google.firebase.storage.FirebaseStorage;
         import com.google.firebase.storage.StorageReference;
       import com.google.firebase.storage.UploadTask;
       import java.io.File;
@@ -55,6 +57,8 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
     private static final int CAMERA_REQUEST_CODE = 1;
     private Uri uri;
     private StorageReference storageRef;
+
+    private FirebaseMessagingService myFirebaseMessagingService;
     private ProgressDialog progressbar;
     private final int GALLERY = 1;
    private  Uri donwloadImage = null;
@@ -118,7 +122,7 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
                         DataBase.addEventToDataBase(currentDateandTime3, myUsername, str, hour_minutes, currentDateandTime2, "");
                         setResult(RESULT_OK, null);
                         Toast.makeText(getBaseContext(), "Event successfully registered to the logbook!", Toast.LENGTH_LONG).show();
-                        bulidNotfication();
+
                     }
 
 
@@ -197,7 +201,6 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
                     progressbar.setMessage("Uploading file finished...");
                     progressbar.dismiss();
                     Toast.makeText(getBaseContext(), "Upload done successfully", Toast.LENGTH_LONG).show();
-                    bulidNotfication();
                 }
             });
 
@@ -207,7 +210,7 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
 
 
     }
-
+/*
     public void  bulidNotfication( ){
 
 
@@ -224,5 +227,5 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
         NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         nm.notify(uniID,notification.build());
 
-    }
+    }*/
 }
