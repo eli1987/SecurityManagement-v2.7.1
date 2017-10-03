@@ -12,7 +12,14 @@ import com.firebase.client.ChildEventListener;
         import com.firebase.client.Firebase;
         import com.firebase.client.FirebaseError;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Locale;
 
 public class LogbookEvents extends Activity {
     private Context context;
@@ -59,11 +66,11 @@ public class LogbookEvents extends Activity {
 
                     mUsersName.add(new User(people.getDescription(),people.getTime(),people.getUsername(),people.getUrlImage()));
 
-
+                    Collections.sort(mUsersName,new DatesComparator());
 
 
                     adapter.notifyDataSetChanged();
-                        mListView.setSelection(adapter.getCount() - 1);
+                    mListView.setSelection(adapter.getCount() - 1);
 
                 }
 
@@ -99,6 +106,26 @@ public class LogbookEvents extends Activity {
 
 
 
+    }
+}
+
+ class DatesComparator implements Comparator<User>
+{
+    public int compare(User left, User right) {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yy HH:mm " , Locale.US/* hh:mm*/);
+        try {
+            Date date = format.parse(left.getTime());
+            Date date2 = format.parse(right.getTime());
+            if (date.after(date2))
+            {
+                return 1;
+            }
+            else
+                return -1;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return 1;
     }
 }
 

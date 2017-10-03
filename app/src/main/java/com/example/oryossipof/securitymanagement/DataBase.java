@@ -110,6 +110,7 @@ class DataBase {
                 mRefChild.child(dateofLost).child(lostnumber+"").child("whereLostFound").setValue(whereLostFound);
                 mRefChild.child(dateofLost).child(lostnumber+"").child("whoFound").setValue(whoFound);
                 mRefChild.child(dateofLost).child(lostnumber+"").child("month").setValue(dateofLost);
+                mRefChild.child(dateofLost).child(lostnumber+"").child("DayFounded").setValue(timeToShow);
                 mRefChild.child(dateofLost).child(lostnumber+"").child("username").setValue(myUsername);
                 mRefChild.child(dateofLost).child(lostnumber+"").child("imageUri").setValue(imageString);
                 mRefChild.child(dateofLost).child(lostnumber+"").child("isReturn").setValue("No");

@@ -34,6 +34,7 @@ public class LostAdapter extends ArrayAdapter<Lost> {
 
         String username = getItem(position).getUsername();
     final     String time = getItem(position).getMonth();
+        final     String day = getItem(position).getDayFounded();
         String description = getItem(position).getLostDescrption();
         String image = getItem(position).getImageUri();
         String where = getItem(position).getWhereLostFound();
@@ -43,7 +44,7 @@ public class LostAdapter extends ArrayAdapter<Lost> {
 
 
 
-        Lost user = new Lost(description, time, username, where, who, image,lost,return1);
+        Lost user = new Lost(description, time, username, where, who, image,lost,return1,day);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
@@ -55,7 +56,7 @@ public class LostAdapter extends ArrayAdapter<Lost> {
         TextView WhereTxt = (TextView)convertView.findViewById(R.id.whereLostFoundText);
         TextView whoTxt = (TextView)convertView.findViewById(R.id.secHandele);
         TextView numOfLostTxt = (TextView)convertView.findViewById(R.id.numberofLost);
-       // TextView isReturnTxt = (TextView)convertView.findViewById(R.id.isReturend);
+       //TextView isReturnTxt = (TextView)convertView.findViewById(R.id.isReturend);
         final  Button  isreturn = (Button)convertView.findViewById(R.id.button2);
 
 
@@ -74,7 +75,7 @@ public class LostAdapter extends ArrayAdapter<Lost> {
             }
         });
 
-        timeTxt.setText(time);
+        timeTxt.setText(day);
         usernameTxt.setText(username);
         DesTxt.setText(description);
         WhereTxt.setText(where);

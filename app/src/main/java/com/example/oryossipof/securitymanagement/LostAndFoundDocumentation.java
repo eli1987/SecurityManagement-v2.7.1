@@ -17,7 +17,6 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -34,9 +33,10 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
     private  String myUsername, myID;
     private String value,monthStr;
     private  Button selectMonthBt,isreturnBt;
-    private int day,month2,year2;
+    private int day,month2,year2,month3;
     private DatePickerDialog datepick;
     private Calendar cal ;
+    private   static final int DATE_DIALOG_ID = 1;
 
 
     @Override
@@ -69,15 +69,22 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker datePicker, int day, int month, int year) {
 
-                        month2 = datePicker.getMonth();
+
+                        month3 = datePicker.getMonth();
                         year2 = datePicker.getYear();
-                        month2+=1;
+                        month3+=1;
 
-                        if(month2 < 10)
-                            monthStr= "0"+month2;
+                        if(month3 < 10)
+                            monthStr= "0"+month3;
                         else
-                            monthStr =""+month2;
+                            monthStr =""+month3;
 
+                        if(mLost.size()>0)
+                        {
+                            mLost.clear();
+                            adapter.notifyDataSetChanged();
+
+                        }
 
                         mListView.setSelection(adapter.getCount() - 1);
 
@@ -94,7 +101,7 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
                                     if (dataSnapshot.getKey().equals(monthStr +"-"+year2)) {
                                         Lost lost = child.getValue(Lost.class);
 
-                                        mLost.add(new Lost(lost.getLostDescrption(), lost.getMonth(), lost.getUsername(), lost.getWhereLostFound(), lost.getWhoFound(), lost.getImageUri(), lost.getLostnumber(), lost.getIsReturn()));
+                                        mLost.add(new Lost(lost.getLostDescrption(), lost.getMonth(), lost.getUsername(), lost.getWhereLostFound(), lost.getWhoFound(), lost.getImageUri(), lost.getLostnumber(), lost.getIsReturn(),lost.getDayFounded()));
 
                                         adapter.notifyDataSetChanged();
                                         mListView.setSelection(adapter.getCount() - 1);
@@ -133,9 +140,9 @@ public class LostAndFoundDocumentation extends AppCompatActivity {
 
                     }
                 },year2,month2,day);
-                datepick.show();}
+                datepick.show();
+            }
         });
-
 
 
     }

@@ -10,6 +10,7 @@ public class Lost {
 
     public String lostDescrption;
     public String month;
+    public String DayFounded;
     public String username;
     public String whereLostFound;
     public String whoFound;
@@ -22,12 +23,13 @@ public class Lost {
 
     }
 
-    public Lost(String lostDescrption, String month, String username,String whereLostFound,String whoFound,String imageUri,String lostnumber,String isReturn)
+    public Lost(String lostDescrption, String month, String username,String whereLostFound,String whoFound,String imageUri,String lostnumber,String isReturn,String DayFounded)
     {
 
         this.lostDescrption = lostDescrption;
         this.username =username;
         this.month = month;
+        this.DayFounded = DayFounded;
         this.whoFound=whoFound;
         this.whereLostFound=whereLostFound;
         this.imageUri=imageUri;
@@ -98,6 +100,14 @@ public class Lost {
 
     public void setLostnumber(String lostnumber) {
         this.lostnumber = lostnumber;
+    }
+
+    public void setDayFounded(String dayFounded) {
+        DayFounded = dayFounded;
+    }
+
+    public String getDayFounded() {
+        return DayFounded;
     }
 }
 
