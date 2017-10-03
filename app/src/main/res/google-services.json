@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "692802625169",
+    "firebase_url": "https://securitymanagment-2427a.firebaseio.com",
+    "project_id": "securitymanagment-2427a",
+    "storage_bucket": "securitymanagment-2427a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692802625169:android:dbc9330c1bf26fcc",
+        "android_client_info": {
+          "package_name": "com.example.oryossipof.securitymanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692802625169-r7uii4qd2aee10amr600pcmf7pspgts2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ6YmtHbX_46wFe5X5dmzfrgnu-NURIg8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

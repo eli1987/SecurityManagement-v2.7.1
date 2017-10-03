@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+
+    <LinearLayout
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/numberofLostTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Lost Number:"
+            android:textColor="#0000FF"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/howFoundTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/timeTextView"
+            android:layout_below="@+id/timeTextView"
+            android:layout_marginTop="5dp"
+            android:text="Date:"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/lostDescrptionTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/howFoundTitle"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+                android:text="Loss discretion:"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/whereLostFoundTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lostDescrptionTextTitle"
+                android:layout_marginTop="5dp"
+                android:text="Found at:"
+                android:textColor="#000"
+
+
+                />
+
+            <TextView
+                android:id="@+id/secHandeleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/isReturendTittle"
+                android:layout_below="@+id/lostDescrptionTextTitle"
+                android:layout_marginTop="5dp"
+                android:text="Founded by:"
+                android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/isReturendTittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/secHandeleTitle"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="5dp"
+            android:text="Returned?:"
+            android:textColor="#000"
+
+
+            />
+
+
+        >
+
+
+        <TextView
+
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/numberofLostTitle"
+            android:text="Security officer handles:"
+            android:textColor="#000"
+            android:textStyle="bold"
+
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/numberofLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#0000FF"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/whoFoundText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/timeTextView"
+            android:layout_below="@+id/timeTextView"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/lostDescrptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/howFoundTitle"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#000" />
+
+
+        <TextView
+            android:id="@+id/whereLostFoundText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lostDescrptionTextTitle"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#000"
+
+
+            />
+
+        <TextView
+            android:id="@+id/secHandele"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/isReturendTittle"
+            android:layout_below="@+id/lostDescrptionTextTitle"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginBottom="10dp"
+            android:text="Button" />
+
+        >
+
+
+        <TextView
+
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/numberofLostTitle"
+            android:text="TextView"
+            android:textColor="#000"
+            android:textStyle="bold"
+
+
+            />
+
+
+        <ImageView
+            android:id="@+id/imageUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/isReturendTittle"
+            android:layout_marginTop="5dp"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

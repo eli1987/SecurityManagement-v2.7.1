@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="56dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background = "@drawable/singinback"
+    android:orientation="vertical"
+    android:baselineAligned="false"
+
+
+    >
+
+    <EditText
+        android:id="@+id/userID"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:hint="User ID"
+        android:inputType="number"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:textSize="20dp"
+        android:textDirection="anyRtl"
+        android:gravity="left"
+        />
+
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:hint="User Name"
+        android:inputType="textCapCharacters"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:textDirection="anyRtl"
+        android:textSize="20dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        >
+
+        <Button
+            android:id="@+id/removeUserbt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="Remove"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_weight="50"
+            />
+
+        <Button
+            android:id="@+id/signupbt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:text="Signup"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_weight="50"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

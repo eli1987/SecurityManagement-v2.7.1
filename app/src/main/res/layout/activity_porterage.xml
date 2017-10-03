@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oryossipof.securitymanagement.PorterageActivity"
+android:layout_gravity="left"
+    android:gravity="left"
+    >
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/monthTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Month: ">
+
+
+        </TextView>
+
+        <Spinner
+            android:id="@+id/monthCombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/monthTxt"
+            android:layout_marginStart="28dp">
+
+
+        </Spinner>
+
+
+
+
+        <TextView
+            android:id="@+id/yearTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year: "
+            android:layout_below="@+id/monthTxt"
+
+            >
+
+
+        </TextView>
+
+
+
+        <Spinner
+            android:id="@+id/yearCombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textDirection="ltr"
+
+
+            android:layout_below="@+id/monthTxt"
+            android:layout_alignStart="@+id/monthCombo">
+
+
+        </Spinner>
+
+
+
+
+
+</RelativeLayout>

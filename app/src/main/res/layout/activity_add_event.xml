@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oryossipof.securitymanagement.AddEventAct"
+    android:orientation="vertical"
+    android:gravity="left"
+
+    >
+
+
+
+
+    <LinearLayout
+        android:gravity="left"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+
+        <TextClock
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left" />
+
+
+        <TextView
+            android:id="@+id/datetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text=""
+
+
+            />
+
+
+        <TextView
+
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+
+            android:text="Date: "
+
+
+            />
+    </LinearLayout>
+
+    <TextView
+        android:gravity="left"
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Description: "
+        />
+
+    <EditText
+        android:id="@+id/EventText"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/editbackground"
+        android:gravity="top"
+        android:hint="Describe Event"
+        android:inputType="text|textMultiLine"
+
+        />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        >
+
+        <Button
+
+            android:id="@+id/attachPhotobt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:text="Attach Photo"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+
+        >
+
+
+
+    <Button
+        android:layout_weight="50"
+        android:id="@+id/cancelBT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel" />
+
+        <Button
+            android:layout_weight="50"
+            android:id="@+id/addEventBT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Event" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/showEventsBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logbook Events" />
+</LinearLayout>

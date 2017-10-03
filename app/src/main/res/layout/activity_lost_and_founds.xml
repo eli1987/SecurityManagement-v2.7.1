@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lostback">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/lostandfoundt" />
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/editbackground"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/lostDescrptionText"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Description of the lost"
+         android:layout_marginBottom="10dp"
+        android:background="@drawable/editbackground"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+
+        android:id="@+id/whereLostFoundText"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:background="@drawable/editbackground"
+        android:inputType="textPersonName"
+        android:hint="Where the lost was found?"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:background="@drawable/editbackground"
+        android:id="@+id/whoFoundText"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Who found the lost?"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        />
+
+    <Button
+
+        android:id="@+id/dateBt"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="@drawable/camera" />
+
+    <Button
+        android:id="@+id/addLostBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Lost "
+       android:background="#f4fffd"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/DocumentationBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f4fffd"
+        android:text="Lost and Found Documentation" />
+
+</LinearLayout>
