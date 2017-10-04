@@ -22,36 +22,49 @@
         <activity
             android:name=".MainScreenActivity"
             android:label="@string/title_activity_main_screen"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".UserManagementActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AddEventAct"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LogbookEvents"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LostAndFoundsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PorterageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LostAndFoundDocumentation"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".ReduceFromPorterageActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PorterageMonthActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AddGroupActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserManagementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddEventAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LogbookEvents"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LostAndFoundsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PorterageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LostAndFoundDocumentation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReduceFromPorterageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PorterageMonthActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddGroupActivity"
+            android:screenOrientation="portrait" />
 
-        <service
-            android:name=".MyFirebaseMessagingService">
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
+        <activity android:name=".DepositsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Deposits_Documentation"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

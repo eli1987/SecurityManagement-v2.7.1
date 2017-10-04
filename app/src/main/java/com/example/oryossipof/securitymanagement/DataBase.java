@@ -346,6 +346,75 @@ class DataBase {
 
     }
 
+    public static void addDepositToFireBaseDataBase(int depositNumber,final String depositDescription,final String whoRecive,final String whoDeliver,final String dateofDeposit,final String myUsername,final String stringUri,final String newcurrentMonth) {
+
+        Firebase mRefChild = myRef.child("Deposits").child(dateofDeposit);
+
+        mRefChild.addListenerForSingleValueEvent(new com.firebase.client.ValueEventListener() {
+            @Override
+            public void onDataChange(com.firebase.client.DataSnapshot dataSnapshot) {
+                int depositNumber = 0 ;
+                if(dataSnapshot.exists())  //there is a match
+                {
+                    String name = "";
+                    for (com.firebase.client.DataSnapshot  d :dataSnapshot.getChildren()) {
+                        depositNumber ++;
+                    }
+
+                    Log.e("number of lost",depositNumber+"");
+                }
+
+                Firebase  mRefChild = myRef.child("Deposits");
+
+                mRefChild.push();
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("depositnumber").setValue(depositNumber+"");
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("depositDescrption").setValue(depositDescription);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("whoDepositFor").setValue(whoRecive);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("whoDeliverDeposit").setValue(whoDeliver);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("month").setValue(dateofDeposit);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("DayDelivered").setValue(newcurrentMonth);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("username").setValue(myUsername);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("imageUri").setValue(stringUri);
+                mRefChild.child(dateofDeposit).child(depositNumber+"").child("isReturn").setValue("No");
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+
+    }
+
+    public static void returnItemDeposit(final String time ,final String id ,final String isReturn) {
+
+        Firebase mRefChild = myRef.child("Deposits").child(time);
+
+        mRefChild.addListenerForSingleValueEvent(new com.firebase.client.ValueEventListener() {
+            @Override
+            public void onDataChange(com.firebase.client.DataSnapshot dataSnapshot) {
+                String valueReturn;
+                if(isReturn.equals("Yes"))
+                    valueReturn = "Yes";
+                else
+                    valueReturn = "No";
+
+                try {
+                    myRef.child("Deposits").child(time).child(id).child("isReturn").setValue(valueReturn+"");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+    }
 }
 
 

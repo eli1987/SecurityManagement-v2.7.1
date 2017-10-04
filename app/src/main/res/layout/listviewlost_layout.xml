@@ -32,7 +32,9 @@
             android:layout_below="@+id/timeTextView"
             android:layout_marginTop="5dp"
             android:text="Date:"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/lostDescrptionTextTitle"
@@ -128,7 +130,9 @@
             android:layout_below="@+id/timeTextView"
             android:layout_marginTop="5dp"
             android:text="TextView"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/lostDescrptionText"
