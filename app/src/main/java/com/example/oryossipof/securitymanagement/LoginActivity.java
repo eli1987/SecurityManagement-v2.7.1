@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.icu.util.Freezable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         nameText = (EditText) findViewById(R.id.input_name);
         loginButton =  (Button) findViewById(R.id.btn_login);
 
+        int maxLength = 9;
+        nameText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

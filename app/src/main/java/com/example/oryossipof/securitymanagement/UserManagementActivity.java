@@ -3,6 +3,7 @@ package com.example.oryossipof.securitymanagement;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +40,8 @@ public class UserManagementActivity extends AppCompatActivity {
         IDText = (EditText) findViewById(R.id.userID);
         nameText =  (EditText) findViewById(R.id.userName);
 
+        int maxLength = 9;
+        IDText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
 
 
         myRef = new Firebase("https://securitymanagment-2427a.firebaseio.com/");

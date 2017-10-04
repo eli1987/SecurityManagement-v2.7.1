@@ -8,16 +8,24 @@
     tools:context="com.example.oryossipof.securitymanagement.MainScreenActivity"
     android:orientation="vertical"
     android:weightSum="100"
-
-
+    android:background="@drawable/gun1"
 
     >
 
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="197dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sec3"
+        android:layout_marginTop="40dp"
 
+
+        />
 
     <Button
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="60dp"
         android:layout_weight="5"
         android:id="@+id/logBookBT"
         android:layout_width="250dp"

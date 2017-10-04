@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -22,17 +22,28 @@
         <activity
             android:name=".MainScreenActivity"
             android:label="@string/title_activity_main_screen"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".UserManagementActivity" />
-        <activity android:name=".AddEventAct" />
-        <activity android:name=".LogbookEvents" />
-        <activity android:name=".LostAndFoundsActivity" />
-        <activity android:name=".PorterageActivity" />
-        <activity android:name=".LostAndFoundDocumentation"></activity>
-        <activity android:name=".ReduceFromPorterageActivity" />
-        <activity android:name=".PorterageMonthActivity" />
-        <activity android:name=".AddGroupActivity"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".UserManagementActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AddEventAct"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LogbookEvents"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LostAndFoundsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PorterageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LostAndFoundDocumentation"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ReduceFromPorterageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PorterageMonthActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AddGroupActivity"
+            android:screenOrientation="portrait"></activity>
 
         <service
             android:name=".MyFirebaseMessagingService">

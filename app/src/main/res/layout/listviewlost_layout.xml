@@ -41,7 +41,7 @@
                 android:layout_alignStart="@+id/howFoundTitle"
             android:layout_centerVertical="true"
             android:layout_marginTop="5dp"
-                android:text="Loss discretion:"
+                android:text="Loss description:"
                 android:textColor="#000" />
 
 
@@ -64,7 +64,7 @@
                 android:layout_alignStart="@+id/isReturendTittle"
                 android:layout_below="@+id/lostDescrptionTextTitle"
                 android:layout_marginTop="5dp"
-                android:text="Founded by:"
+                android:text="Found by:"
                 android:textColor="#000" />
 
         <TextView

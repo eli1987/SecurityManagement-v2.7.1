@@ -5,49 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.oryossipof.securitymanagement.PorterageActivity"
-android:layout_gravity="center"
+    android:layout_gravity="center"
     android:gravity="center_horizontal"
-    android:background="@drawable/bg1"
-
-
+    android:background="@drawable/port3"
     >
-
 
 <ImageView
     android:id="@+id/logoporterage"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:src="@drawable/porteragelogo"
-    android:layout_centerHorizontal="true"
-    />
-
+    android:src="@drawable/porterage"
+    android:layout_alignParentTop="true"
+    android:layout_alignStart="@+id/exitBT" />
 
 <LinearLayout
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="28dp"
     android:weightSum="100"
-    android:layout_width="match_parent"
+    android:layout_width="200dp"
     android:layout_height="wrap_content"
     android:id="@+id/monthLayout"
     android:layout_below="@+id/logoporterage"
-
     >
 
-
         <Spinner
-            android:layout_weight="30"
             android:id="@+id/monthCombo"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
 
 
-    >
+            >
 
 
         </Spinner>
 
         <TextView
-            android:layout_weight="20"
             android:id="@+id/monthTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,15 +49,12 @@ android:layout_gravity="center"
 
         </TextView>
 
-
-
 </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/yearlayout"
             android:weightSum="100"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/monthLayout"
 
@@ -73,111 +62,81 @@ android:layout_gravity="center"
 
                 <Spinner
                     android:id="@+id/yearCombo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="30"
                     android:textDirection="ltr">
 
 
                 </Spinner>
 
-
                 <TextView
-                    android:layout_weight="20"
                     android:id="@+id/yearTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Year: "
-
-
-                    >
+                    android:layout_alignBottom="@+id/yearlayout"
+                    android:layout_below="@+id/monthLayout"
+                    android:layout_weight="1"
+                    android:text="Year: ">
 
 
                 </TextView>
 
+
         </LinearLayout>
 
+        <TextView
 
-        <LinearLayout
-            android:id="@+id/totalPorterageLayout"
-            android:weightSum="100"
-            android:layout_marginTop="78dp"
+
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/yearlayout"
-            android:layout_centerHorizontal="true">
+            android:text="Total Porterage: $"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/totalPorterageTxt"
+            android:layout_marginLeft="60dp"/>
 
+        <TextView
+            android:id="@+id/totalPorterageTxt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editbackground"
+            android:enabled="false"
+            android:inputType="text|textMultiLine"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_alignBaseline="@+id/textView3"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignStart="@+id/yearlayout" />
 
-                <TextView
-                    android:id="@+id/totalPorterageTxt"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/editbackground"
-                    android:gravity="top"
-                    android:inputType="text|textMultiLine"
-                    android:enabled="false"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-
-                    />
-
-
-                <TextView
-
-
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:textSize="20dp"
-                    android:text="Total Porterage: $"
-                    android:textStyle="bold"
-                    />
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
+        <Button
+            android:id="@+id/gotsomeBT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/totalPorterageLayout"
+            android:layout_marginTop="100dp"
+            android:text="Got Some"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_toEndOf="@+id/okBT" />
 
-            >
+        <Button
+            android:id="@+id/exitBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:text="Exit"
+            android:layout_marginStart="37dp"
+            android:layout_below="@+id/gotsomeBT"
+            android:layout_alignStart="@+id/okBT" />
 
-                <Button
-                    android:id="@+id/exitBT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Exit"
-
-                    />
-
-
-                <Button
-                    android:id="@+id/okBT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OK"
-
-                    />
-
-                <Button
-                    android:id="@+id/gotsomeBT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Got Some"
-
-                    />
-
-
-
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/okBT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignStart="@+id/totalPorterageTxt"
+            android:layout_marginTop="100dp"/>
 
 
 </RelativeLayout>

@@ -7,12 +7,12 @@
     tools:context="com.example.oryossipof.securitymanagement.AddEventAct"
     android:orientation="vertical"
     android:gravity="left"
-
+    android:background="@drawable/log3"
 
     >
 
 
-    <ImageView android:src="@drawable/logbookimage"
+    <ImageView android:src="@drawable/logbook1"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_gravity="center_horizontal"
@@ -52,10 +52,6 @@
 
         android:layout_gravity="center"
         >
-
-
-
-
 
 
     </LinearLayout>
