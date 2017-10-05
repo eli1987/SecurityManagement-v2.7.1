@@ -1,6 +1,7 @@
 package com.example.oryossipof.securitymanagement;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,15 +30,19 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         setContentView(R.layout.activity_main_screen);
         db = new DataBase(MainScreenActivity.this);
 
+       final MediaPlayer mp =  MediaPlayer.create(this,R.raw.gunshot);
+
 
         userManagementBT = (Button) findViewById(R.id.userManagementBT);
         userManagementBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(MainScreenActivity.this, UserManagementActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);
                 startActivity(intent);
+
             }
         });
 
@@ -49,7 +54,8 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         eventActBt = (Button) findViewById(R.id.logBookBT);
       eventActBt.setOnClickListener(new View.OnClickListener() {
            public void onClick(View view) {
-                Intent intent = new Intent(MainScreenActivity.this, AddEventAct.class);
+               mp.start();
+               Intent intent = new Intent(MainScreenActivity.this, AddEventAct.class);
                intent.putExtra("myID", myID);
                intent.putExtra("myUsername",myUsername);
                startActivity(intent);
@@ -60,6 +66,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         exitBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 android.os.Process.killProcess(android.os.Process.myPid());
                 System.exit(1);
             }
@@ -71,6 +78,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         porterageBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(MainScreenActivity.this, PorterageActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);
@@ -83,6 +91,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         lostsBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(MainScreenActivity.this, LostAndFoundsActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);
@@ -95,6 +104,7 @@ private Button userManagementBT,exitBT, porterageBT,eventActBt,lostsBT,depositBt
         depositBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(MainScreenActivity.this, DepositsActivity.class);
                 intent.putExtra("myID", myID);
                 intent.putExtra("myUsername",myUsername);
