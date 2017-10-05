@@ -2,6 +2,7 @@ package com.example.oryossipof.securitymanagement;
 
       import android.*;
       import android.Manifest;
+      import android.app.NotificationChannel;
       import android.app.NotificationManager;
       import android.app.PendingIntent;
       import android.app.ProgressDialog;
@@ -34,6 +35,8 @@ package com.example.oryossipof.securitymanagement;
         import com.firebase.client.Firebase;
         import com.google.android.gms.tasks.OnFailureListener;
         import com.google.android.gms.tasks.OnSuccessListener;
+      import com.google.firebase.iid.FirebaseInstanceId;
+      import com.google.firebase.messaging.FirebaseMessaging;
       import com.google.firebase.messaging.FirebaseMessagingService;
       import com.google.firebase.messaging.RemoteMessage;
       import com.google.firebase.storage.FirebaseStorage;
@@ -67,13 +70,15 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
    private  Uri donwloadImage = null;
     private android.support.v4.app.NotificationCompat.Builder notification;
     private final static int uniID = 65411 ;
-
+    private static final String TAG ="AddEventAct.java";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
+
+
 
         Intent intent = getIntent();
         this.myUsername = intent.getStringExtra("myUsername");
@@ -95,6 +100,25 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
         progressbar = new ProgressDialog(this);
 
         //
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = "123";
+            String channelName = "Eli";
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                Object value = getIntent().getExtras().get(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }
+
 
         eventText = (EditText) findViewById(R.id.EventText);
 
@@ -122,7 +146,6 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
                         DataBase.addEventToDataBase(currentDateandTime3, myUsername, str, hour_minutes, currentDateandTime2, stringUri);
                        setResult(RESULT_OK, null);
                         Toast.makeText(getBaseContext(), "Event successfully registered to the logbook!", Toast.LENGTH_LONG).show();
-
                    }
                     else{
                         DataBase.addEventToDataBase(currentDateandTime3, myUsername, str, hour_minutes, currentDateandTime2, "");

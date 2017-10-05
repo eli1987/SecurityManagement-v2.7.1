@@ -1,7 +1,9 @@
 package com.example.oryossipof.securitymanagement;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.util.Freezable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +16,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static java.net.Proxy.Type.HTTP;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -25,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText nameText ;
     private Button loginButton ;
     private  Firebase myRef;
+    String add ="http://10.0.0.2/secuirtyManagement/fcm_insert.php";  //Change it to your own path//
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         Firebase.setAndroidContext(LoginActivity.this);
 
@@ -49,7 +64,37 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.FCM_PREF), Context.MODE_PRIVATE);
+                final String token = sharedPreferences.getString(getString(R.string.FCM_Token),"");
+                StringRequest sR = new StringRequest(Request.Method.POST,add, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+
+                }
+
+                )
+                {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> params = new HashMap<String, String>();
+                    //    params.put("fcm_token",token);
+                        return super.getParams();
+
+                    }
+                };
+                MySinglton.getmInstance(LoginActivity.this).addToRequestque(sR);
+
+
                 login();
+
             }
         });
     }

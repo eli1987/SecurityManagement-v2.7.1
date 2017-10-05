@@ -10,6 +10,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        useLibrary 'org.apache.http.legacy'
+
     }
     buildTypes {
         release {
@@ -51,6 +53,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:11.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'org.jetbrains:annotations-java5:15.0'
+    compile 'com.android.volley:volley:1.0.0'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

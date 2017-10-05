@@ -3,7 +3,8 @@
 
     <string name="title_activity_loading_screen">LoadingScreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="FCM_Token">com.example.oryossipof.securitymanagement.fcm_token</string>
+    <string name="FCM_PREF">com.example.oryossipof.securitymanagement.fcm_pref</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="title_activity_main_screen">MainScreenActivity</string>
