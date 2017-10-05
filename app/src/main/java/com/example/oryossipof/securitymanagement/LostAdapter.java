@@ -90,7 +90,7 @@ public class LostAdapter extends ArrayAdapter<Lost> {
 
             Log.e("URI:" , uri.toString());
             imageView.getLayoutParams().height = 800;
-            Picasso.with(getContext()).load(uri).into(imageView);
+            Picasso.with(getContext()).load(uri).rotate(90).fit().centerInside().into(imageView);
         }
 
         //imageView.setImageResource(  getContext().getResources().getIdentifier("drawable/" + image, null,  getContext().getPackageName()));

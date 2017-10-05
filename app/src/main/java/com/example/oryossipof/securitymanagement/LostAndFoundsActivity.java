@@ -1,11 +1,15 @@
 package com.example.oryossipof.securitymanagement;
 
+import android.*;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +38,7 @@ import java.util.Date;
 
 public class LostAndFoundsActivity extends AppCompatActivity {
 
+    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
     private String myID,myUsername;
     private Button dateBt ,addLostBt ,photoBt,showDocumentation;
     private Context context;
@@ -113,34 +118,33 @@ public class LostAndFoundsActivity extends AppCompatActivity {
             }
         });
 
-        /*
-
-        dateBt = (Button)findViewById(R.id.dateBt);
-
-        dateBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                 datepick = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int day, int month, int year) {
-                        dateTextview.setText(datePicker.getDayOfMonth()+"/"+datePicker.getMonth()+"/"+datePicker.getYear());
-                    }
-                },day,month,year);
-            datepick.show();}
-        });
-    }
-
-*/
         photoBt = (Button) findViewById(R.id.dateBt);
         photoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                //intent.setType("image/*");
+                // Here, thisActivity is the current activity
+                if (ContextCompat.checkSelfPermission(LostAndFoundsActivity.this,
+                        android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
 
-                startActivityForResult(intent ,GALLERY);
+                    // Should we show an explanation?
+                    // No explanation needed, we can request the permission.
+
+                    ActivityCompat.requestPermissions(LostAndFoundsActivity.this,
+                            new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+                    // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                    // app-defined int constant. The callback method gets the
+                    // result of the request
+                }
+                else{
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //intent.setType("image/*");
+                    startActivityForResult(intent ,GALLERY);
+
+                }
 
             }
         });
@@ -219,6 +223,36 @@ public class LostAndFoundsActivity extends AppCompatActivity {
 
         }
 
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //intent.setType("image/*");
+                    startActivityForResult(intent ,GALLERY);
+
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(getBaseContext(), "Sorry without this permission \n Can not take a picture", Toast.LENGTH_LONG).show();
+
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 
 

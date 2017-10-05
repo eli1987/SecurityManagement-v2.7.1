@@ -47,6 +47,7 @@ import java.util.Date;
       import java.util.Locale;
 
 public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback{
+    private static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 1;
     private TextView dateTxt ,eventText;
     private Firebase myRef;
     private Button showEventsBtt ,addEventBtClass, cancelBT,photoBT;
@@ -147,10 +148,31 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
         photoBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                //intent.setType("image/*");
 
-                startActivityForResult(intent ,GALLERY);
+                // Here, thisActivity is the current activity
+                if (ContextCompat.checkSelfPermission(AddEventAct.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    // Should we show an explanation?
+                    // No explanation needed, we can request the permission.
+
+                    ActivityCompat.requestPermissions(AddEventAct.this,
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                            MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+
+                    // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                    // app-defined int constant. The callback method gets the
+                    // result of the request
+                }
+                else{
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //intent.setType("image/*");
+                    startActivityForResult(intent ,GALLERY);
+
+                }
+
+
             }
         });
 
@@ -174,12 +196,7 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
             }
         });
 
-
-
-
-
     }
-
 
 
     @Override
@@ -207,9 +224,40 @@ public class AddEventAct extends AppCompatActivity implements ActivityCompat.OnR
 
         }
 
-
-
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    //intent.setType("image/*");
+                    startActivityForResult(intent ,GALLERY);
+
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(getBaseContext(), "Sorry without this permission \n Can not take a picture", Toast.LENGTH_LONG).show();
+
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
+
+
 /*
     public void  bulidNotfication( ){
 

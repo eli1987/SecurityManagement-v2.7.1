@@ -92,7 +92,8 @@ public class DepositAdapter extends ArrayAdapter<Deposit> {
 
             Log.e("URI:" , uri.toString());
             imageView.getLayoutParams().height = 800;
-            Picasso.with(getContext()).load(uri).into(imageView);
+           // imageView.getLayoutParams().width = 1200;
+            Picasso.with(getContext()).load(uri).rotate(90).fit().centerInside().into(imageView);
         }
 
         //imageView.setImageResource(  getContext().getResources().getIdentifier("drawable/" + image, null,  getContext().getPackageName()));

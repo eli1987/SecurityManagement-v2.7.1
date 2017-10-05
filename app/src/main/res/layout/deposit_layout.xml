@@ -204,10 +204,10 @@
 
     <ImageView
         android:id="@+id/imageUpload"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeText"
-        android:layout_marginLeft="27dp"
+        android:layout_marginLeft="1dp"
         />
 
 
